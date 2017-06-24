@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    <package name="studentInfo" namespace="/" extends="struts-default">
+
+        <action name="student" class="com.dlmu.circle.action.StudentAction">
+            <result name="success">main.jsp</result>
+            <result name="error">login.jsp</result>
+            <result name="logout" type="redirect">login.jsp</result>
+            <result name="save" type="redirectAction">student!list</result>
+        </action>
+        <action name="paper" class="com.dlmu.circle.action.PaperAction">
+            <result name="success">main.jsp</result>
+            <result name="save" type="redirectAction">paper!paperList</result>
+        </action>
+        <action name="Exam" class="com.dlmu.circle.action.ExamAction">
+            <result name="success">main.jsp</result>
+        </action>
+        <action name="Manager" class="com.dlmu.circle.action.ManagerAction">
+            <result name="success">main.jsp</result>
+            <result name="error">loginAdmin.jsp</result>
+            <result name="logout" type="redirect">loginAdmin.jsp</result>
+        </action>
+        <action name="question" class="com.dlmu.circle.action.QuestionAction">
+            <result name="success">main.jsp</result>
+            <result name="save" type="redirectAction">question!list</result>
+        </action>
+    </package>
+</struts>
